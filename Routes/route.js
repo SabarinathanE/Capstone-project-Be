@@ -211,7 +211,7 @@ router.post("/reset/:id",async(req,res)=>{
           const getUser=await findUser(req.params.id);
 
           //verifying token
-          const verify=jwt.verify(getUser[0].token,process.env.secret_key);
+          const verify=jwt.verify(getUser[0].token,process.env.SECRET_KEY);
 
           //encrypting user password
           const salt=await bcrypt.genSalt(10);
