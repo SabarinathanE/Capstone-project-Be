@@ -45,15 +45,7 @@ router.post("/register",async(req,res)=>{
                 from: process.env.Email,
                 to:registeringUser[0].email,
                 subject:"Account Activation Link",
-                html:`<a href=${link}><button style="background:violet;
-                color:black;
-                height:50px;
-                width:150px;
-                border:none;
-                border-radius:15px;
-                font-weight:bolder;
-                ">Click to Activate Account</button></a>
-                `
+                html:`<a href=${link}>${link}</a>`
             }
 
             //creating transport to send mail
@@ -121,14 +113,7 @@ router.post("/login",async(req,res)=>{
                         from:process.env.Email,
                         to:checkUser[0].email,
                         subject:"Account Activation Link",
-                        html:`<a href=${link}><button style="background:violet;
-                        color:black;
-                        height:50px;
-                        width:150px;
-                        border:none;
-                        border-radius:15px;
-                        font-weight:bolder;
-                        ">Click to Activate Account</button></a>
+                        html:`<a href=${link}>${link}</a>
                         `
                     }
 
@@ -176,14 +161,7 @@ router.post("/forgot",async(req,res)=>{
                  from:process.env.Email,
                  to:findUser[0].email,
                  subject:"Password Reset Link",
-                 html:`<a href=${link}><button style="background:violet;
-                 color:black;
-                 height:50px;
-                 width:150px;
-                 border:none;
-                 border-radius:15px;
-                 font-weight:bolder;
-                 ">Click to Reset Password</button></a>`
+                 html:`<a href=${link}>${link}</a>`
              }
 
              //creating transport to send mail
